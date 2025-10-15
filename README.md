@@ -38,20 +38,13 @@ Database Setup: Create the required database and tables.
 
 # **Database Setup**
 
-Create a Database:
-
-
+-- Cell 1: Create Database
 CREATE DATABASE hospital;
 
-Use the Database:
-
+-- Cell 2: Use Database
 USE hospital;
 
-Create Tables:
-
-
-Patients Table:
-
+-- Cell 3: Create Patients Table
 CREATE TABLE patients (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -59,21 +52,21 @@ CREATE TABLE patients (
     gender VARCHAR(10) NOT NULL
 );
 
-Doctors Table:
-
+-- Cell 4: Create Doctors Table
 CREATE TABLE doctors (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    specialty VARCHAR(100) NOT NULL
+    specialization VARCHAR(255),
+    contact_info VARCHAR(255)
 );
 
-Appointments Table:
-
+-- Cell 5: Create Appointments Table
 CREATE TABLE appointments (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    patient_id INT NOT NULL,
-    doctor_id INT NOT NULL,
-    appointment_date DATE NOT NULL,
+    patient_id INT,
+    doctor_id INT,
+    appointment_date DATETIME,
+    status VARCHAR(50),
     FOREIGN KEY (patient_id) REFERENCES patients(id),
     FOREIGN KEY (doctor_id) REFERENCES doctors(id)
 );
