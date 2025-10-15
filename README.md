@@ -38,8 +38,10 @@ Database Setup: Create the required database and tables.
 
 # **Database Setup**
 
+```sql
 -- Cell 1: Create Database
 CREATE DATABASE hospital;
+```
 
 -- Cell 2: Use Database
 USE hospital;
